@@ -12,12 +12,12 @@ import (
 type FoodChainCode struct{	
 }
 
-//food数据结构体
+//Data Structure
 type FoodInfo struct{
-    FoodID string `json:FoodID`                             //食品ID
-    FoodProInfo ProInfo `json:FoodProInfo`                  //生产信息
-    FoodIngInfo []IngInfo `json:FoodIngInfo`                  //配料信息
-    FoodLogInfo LogInfo `json:FoodLogInfo`                  //物流信息
+    FoodID string `json:FoodID`                             //foodId
+    FoodProInfo ProInfo `json:FoodProInfo`                  //Product Information
+    FoodIngInfo []IngInfo `json:FoodIngInfo`                //Ingredient Information
+    FoodLogInfo LogInfo `json:FoodLogInfo`                  //Logistics Information
 }
 
 type FoodAllInfo struct{
@@ -27,34 +27,34 @@ type FoodAllInfo struct{
     FoodLogInfo []LogInfo `json:FoodLogInfo`
 }
 
-//生产信息
+//Product Information
 type ProInfo struct{
-    FoodName string `json:FoodName`                         //食品名称
-    FoodSpec string `json:FoodSpec`                         //食品规格
-    FoodMFGDate string `json:FoodMFGDate`                   //食品出产日期
-    FoodEXPDate string `json:FoodEXPDate`                   //食品保质期
-    FoodLOT string `json:FoodLOT`                           //食品批次号
-    FoodQSID string `json:FoodQSID`                         //食品生产许可证编号
-    FoodMFRSName string `json:FoodMFRSName`                 //食品生产商名称
-    FoodProPrice string `json:FoodProPrice`                 //食品生产价格
-    FoodProPlace string `json:FoodProPlace`                 //食品生产所在地
+    FoodName string `json:FoodName`                         //Food name
+    FoodSpec string `json:FoodSpec`                         //Food specification
+    FoodMFGDate string `json:FoodMFGDate`                   //Food Production date
+    FoodEXPDate string `json:FoodEXPDate`                   //Food Shelf life
+    FoodLOT string `json:FoodLOT`                           //Food batch number
+    FoodQSID string `json:FoodQSID`                         //Food Production license number
+    FoodMFRSName string `json:FoodMFRSName`                 //Food Manufacturer name
+    FoodProPrice string `json:FoodProPrice`                 //Food Production Price
+    FoodProPlace string `json:FoodProPlace`                 //Food Production Location
 }
 type IngInfo struct{
-    IngID string `json:IngID`                               //配料ID
-    IngName string `json:IngName`                           //配料名称
+    IngID string `json:IngID`                               //Ingredients Id
+    IngName string `json:IngName`                           //Ingredients name
 }
 
 type LogInfo struct{
-    LogDepartureTm string `json:LogDepartureTm`             //出发时间
-    LogArrivalTm string `json:LogArrivalTm`                 //到达时间
-    LogMission string `json:LogMission`                     //处理业务(储存or运输)
-    LogDeparturePl string `json:LogDeparturePl`             //出发地
-    LogDest string `json:LogDest`                           //目的地
-    LogToSeller string `json:LogToSeller`                   //销售商
-    LogStorageTm string `json:LogStorageTm`                 //存储时间
-    LogMOT string `json:LogMOT`                             //运送方式
-    LogCopName string `json:LogCopName`                     //物流公司名称
-    LogCost string `json:LogCost`                           //费用
+    LogDepartureTm string `json:LogDepartureTm`             //Departure time
+    LogArrivalTm string `json:LogArrivalTm`                 //Time of Arrival
+    LogMission string `json:LogMission`                     //Processing Business(storage or transportation)
+    LogDeparturePl string `json:LogDeparturePl`             //Departure
+    LogDest string `json:LogDest`                           //Destination
+    LogToSeller string `json:LogToSeller`                   //Sellers
+    LogStorageTm string `json:LogStorageTm`                 //Storage time
+    LogMOT string `json:LogMOT`                             //Shipping Method
+    LogCopName string `json:LogCopName`                     //Logistics Company name
+    LogCost string `json:LogCost`                           //Cost
 }
 
 func (a *FoodChainCode) Init(stub shim.ChaincodeStubInterface) pb.Response {

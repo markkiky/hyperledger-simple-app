@@ -8,6 +8,8 @@ This code is based on code written by the Hyperledger Fabric community.
   Original code can be found here: https://gerrit.hyperledger.org/r/#/c/14395/4/fabcar/enrollAdmin.js
  */
 
+ //Fabric Client- Sdk for writing node.js apps to interact with Hyperledger Fabric
+
 var Fabric_Client = require('fabric-client');
 var Fabric_CA_Client = require('fabric-ca-client');
 

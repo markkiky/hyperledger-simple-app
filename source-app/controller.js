@@ -7,6 +7,7 @@ var Fabric_Client = require('fabric-client');
 var path          = require('path');
 var util          = require('util');
 var os            = require('os');
+const { FileSystemWallet, Gateway } = require('fabric-network');
 
 module.exports = (function() {
 return{
@@ -36,6 +37,7 @@ return{
 
 		// setup the fabric network
 		var channel = fabric_client.newChannel('mychannel');
+		//What is the use of grpc here? !!
 		var peer = fabric_client.newPeer('grpc://localhost:7051');
 		channel.addPeer(peer);
 		var order = fabric_client.newOrderer('grpc://localhost:7050')
@@ -119,7 +121,7 @@ return{
 		        // get an eventhub once the fabric client has a user assigned. The user
 		        // is required bacause the event registration must be signed
 		        let event_hub = fabric_client.newEventHub();
-		        event_hub.setPeerAddr('grpc://localhost:7053');
+		        event_hub.setPeerAddr('grpc://localhost:7051');
 
 		        // using resolve the promise so that result status may be processed
 		        // under the then clause rather than having the catch clause process
@@ -175,7 +177,7 @@ return{
 		}).catch((err) => {
 		    console.error('Failed to invoke successfully :: ' + err);
 		});
-		req.flash('success', '发布成功!')
+		req.flash('success', 'Successfully Released!')
 		res.redirect('/')
 	},
 	get_tuna: function(req, res, function_name){
