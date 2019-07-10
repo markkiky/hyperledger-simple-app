@@ -1,5 +1,6 @@
 var tuna = require('./controller.js');
 // Forms post and page swaps get
+// tuna holds control of app
 
 module.exports = function(app) {
 	app.get('/', function(req, res) {
